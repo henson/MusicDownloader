@@ -1,6 +1,8 @@
 # MusicDownloader
 It is a tool to download the music files such as .mp3 from netease cloud.
 
+![](screen.gif)
+
 ## Method
 
 - It can download as songs, programs, playlists, artists, djradios, and so on.

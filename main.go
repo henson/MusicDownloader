@@ -80,7 +80,7 @@ func main() {
 
 WAITING:
 	if len(okChan) != 0 || len(downChan) != 0 {
-		fmt.Printf("====================================\nDownloading: %v\nQueuing: %v\n====================================\n", len(downChan), len(okChan))
+		fmt.Printf("====================================\nDownloading: %v\tQueuing: %v\n====================================\n", len(downChan), len(okChan))
 		time.Sleep(10 * time.Second)
 		goto WAITING
 	}

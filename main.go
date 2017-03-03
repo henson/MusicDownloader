@@ -286,7 +286,7 @@ type ArtistInfo struct {
 // MusicType 类型
 type MusicType struct {
 	Bitrate     int     `json:"bitrate"`
-	DfsID       int     `json:"dfsId"`
+	DfsID       int64   `json:"dfsId"`
 	DfsIDStr    string  `json:"dfsId_str"`
 	Extension   string  `json:"extension"`
 	ID          int     `json:"id"`
@@ -380,13 +380,13 @@ func (in *DJradio) Action(URL string) (items []Item) {
 		item.Dir = in.Programs[i].DJ.Brand + "/"
 		if temp := in.Programs[i].MainSong.HMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Programs[i].MainSong.Name + "(" + strconv.Itoa(in.Programs[i].MainSong.HMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Programs[i].MainSong.HMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Programs[i].MainSong.HMusic.DfsID, 10))
 		} else if temp := in.Programs[i].MainSong.MMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Programs[i].MainSong.Name + "(" + strconv.Itoa(in.Programs[i].MainSong.MMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Programs[i].MainSong.MMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Programs[i].MainSong.MMusic.DfsID, 10))
 		} else {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Programs[i].MainSong.Name + "(" + strconv.Itoa(in.Programs[i].MainSong.LMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Programs[i].MainSong.LMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Programs[i].MainSong.LMusic.DfsID, 10))
 		}
 		items = append(items, item)
 	}
@@ -403,13 +403,13 @@ func (in *Song) Action(URL string) (items []Item) {
 		item.Dir = in.Songs[i].Album.Name + "/"
 		if temp := in.Songs[i].HMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Songs[i].Name + "(" + strconv.Itoa(in.Songs[i].HMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Songs[i].HMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Songs[i].HMusic.DfsID, 10))
 		} else if temp := in.Songs[i].MMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Songs[i].Name + "(" + strconv.Itoa(in.Songs[i].MMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Songs[i].MMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Songs[i].MMusic.DfsID, 10))
 		} else {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Songs[i].Name + "(" + strconv.Itoa(in.Songs[i].LMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Songs[i].LMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Songs[i].LMusic.DfsID, 10))
 		}
 		items = append(items, item)
 	}
@@ -425,13 +425,13 @@ func (in *Program) Action(URL string) (items []Item) {
 	item.Dir = in.Program.Name + "/"
 	if temp := in.Program.MainSong.HMusic.DfsID; temp != 0 {
 		item.FileName = in.Program.MainSong.Name + "(" + strconv.Itoa(in.Program.MainSong.HMusic.Bitrate/1000) + "k).mp3"
-		item.FileURL = encryptedID(strconv.Itoa(in.Program.MainSong.HMusic.DfsID))
+		item.FileURL = encryptedID(strconv.FormatInt(in.Program.MainSong.HMusic.DfsID, 10))
 	} else if temp := in.Program.MainSong.MMusic.DfsID; temp != 0 {
 		item.FileName = in.Program.MainSong.Name + "(" + strconv.Itoa(in.Program.MainSong.MMusic.Bitrate/1000) + "k).mp3"
-		item.FileURL = encryptedID(strconv.Itoa(in.Program.MainSong.MMusic.DfsID))
+		item.FileURL = encryptedID(strconv.FormatInt(in.Program.MainSong.MMusic.DfsID, 10))
 	} else {
 		item.FileName = in.Program.MainSong.Name + "(" + strconv.Itoa(in.Program.MainSong.LMusic.Bitrate/1000) + "k).mp3"
-		item.FileURL = encryptedID(strconv.Itoa(in.Program.MainSong.LMusic.DfsID))
+		item.FileURL = encryptedID(strconv.FormatInt(in.Program.MainSong.LMusic.DfsID, 10))
 	}
 	items = append(items, item)
 	return
@@ -447,13 +447,13 @@ func (in *Artist) Action(URL string) (items []Item) {
 		item.Dir = in.Artist.Name + "/"
 		if temp := in.HotSongs[i].HMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.HotSongs[i].Name + "(" + strconv.Itoa(in.HotSongs[i].HMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.HotSongs[i].HMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.HotSongs[i].HMusic.DfsID, 10))
 		} else if temp := in.HotSongs[i].MMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.HotSongs[i].Name + "(" + strconv.Itoa(in.HotSongs[i].MMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.HotSongs[i].MMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.HotSongs[i].MMusic.DfsID, 10))
 		} else {
 			item.FileName = strconv.Itoa(i+1) + "." + in.HotSongs[i].Name + "(" + strconv.Itoa(in.HotSongs[i].LMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.HotSongs[i].LMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.HotSongs[i].LMusic.DfsID, 10))
 		}
 		items = append(items, item)
 	}
@@ -487,13 +487,13 @@ func (in *Album) Action(URL string) (items []Item) {
 		item.Dir = in.Album.Name + "/"
 		if temp := in.Album.Songs[i].HMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Album.Songs[i].Name + "(" + strconv.Itoa(in.Album.Songs[i].HMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Album.Songs[i].HMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Album.Songs[i].HMusic.DfsID, 10))
 		} else if temp := in.Album.Songs[i].MMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Album.Songs[i].Name + "(" + strconv.Itoa(in.Album.Songs[i].MMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Album.Songs[i].MMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Album.Songs[i].MMusic.DfsID, 10))
 		} else {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Album.Songs[i].Name + "(" + strconv.Itoa(in.Album.Songs[i].LMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Album.Songs[i].LMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Album.Songs[i].LMusic.DfsID, 10))
 		}
 		items = append(items, item)
 	}
@@ -510,13 +510,13 @@ func (in *Playlist) Action(URL string) (items []Item) {
 		item.Dir = in.Result.Name + "/"
 		if temp := in.Result.Tracks[i].HMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Result.Tracks[i].Name + "(" + strconv.Itoa(in.Result.Tracks[i].HMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Result.Tracks[i].HMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Result.Tracks[i].HMusic.DfsID, 10))
 		} else if temp := in.Result.Tracks[i].MMusic.DfsID; temp != 0 {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Result.Tracks[i].Name + "(" + strconv.Itoa(in.Result.Tracks[i].MMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Result.Tracks[i].MMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Result.Tracks[i].MMusic.DfsID, 10))
 		} else {
 			item.FileName = strconv.Itoa(i+1) + "." + in.Result.Tracks[i].Name + "(" + strconv.Itoa(in.Result.Tracks[i].LMusic.Bitrate/1000) + "k).mp3"
-			item.FileURL = encryptedID(strconv.Itoa(in.Result.Tracks[i].LMusic.DfsID))
+			item.FileURL = encryptedID(strconv.FormatInt(in.Result.Tracks[i].LMusic.DfsID, 10))
 		}
 		items = append(items, item)
 	}

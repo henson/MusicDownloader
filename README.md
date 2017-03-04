@@ -1,4 +1,7 @@
-# MusicDownloader
+[![Travis Status for henson/MusicDownloader](https://travis-ci.org/henson/MusicDownloader.svg?branch=master)](https://travis-ci.org/henson/MusicDownloader)
+
+# MusicDownloader 
+
 It is a tool to download the music files such as .mp3 from netease cloud.
 
 ![](screen.gif)
@@ -7,6 +10,12 @@ It is a tool to download the music files such as .mp3 from netease cloud.
 
 - It can download as songs, programs, playlists, artists, djradios, and so on.
 - Paste the URL address directly to it, and waiting.
+
+## Update
+
+```
+go get -u github.com/henson/MusicDownloader
+```
 
 ## Support
 

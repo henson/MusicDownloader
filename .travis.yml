@@ -5,7 +5,7 @@ go:
 before_install:
   - go get github.com/mattn/goveralls
 script: 
-  - goveralls -v -service travis-ci -repotoken $COVERALLS_TOKEN
+  - goveralls -v -service travis-ci -repotoken PAnRlrFKQAlk5Kq0wlfSCcoJJz1hlSRkz
 notifications:
   recipients:
     - henson.lu@gmail.com

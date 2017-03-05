@@ -1,4 +1,5 @@
 [![Travis Status for henson/MusicDownloader](https://travis-ci.org/henson/MusicDownloader.svg?branch=master)](https://travis-ci.org/henson/MusicDownloader)
+[![Go Report Card](https://goreportcard.com/badge/github.com/henson/MusicDownloader)](https://goreportcard.com/report/github.com/henson/MusicDownloader)
 
 # MusicDownloader 
 

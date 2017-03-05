@@ -1,14 +1,10 @@
 language: go
 go:
-  - 1.4.x
-  - 1.5.x
-  - 1.6.x
   - 1.7.x
   - master
 before_install:
   - go get github.com/mattn/goveralls
 script: 
-  - go get github.com/parnurzeal/gorequest
   - goveralls -v -service travis-ci -repotoken $COVERALLS_TOKEN
 notifications:
   recipients:

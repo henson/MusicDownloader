@@ -8,12 +8,12 @@ It is a tool to download the music files such as .mp3 from netease cloud.
 
 ![](screen.gif)
 
-## Method
+## Overview
 
-- It can download as songs, programs, playlists, artists, djradios, and so on.
-- Paste the URL address directly to it, and waiting.
+- It can download songs, programs, playlists, artists, djradios, and so on.
+- Paste the URL address directly in command line, and waiting.
 
-## Update
+## Installation
 
 ```
 go get -u github.com/henson/MusicDownloader

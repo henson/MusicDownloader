@@ -1,6 +1,4 @@
-[![Travis Status for henson/MusicDownloader](https://travis-ci.org/henson/MusicDownloader.svg?branch=master)](https://travis-ci.org/henson/MusicDownloader)
-[![Go Report Card](https://goreportcard.com/badge/github.com/henson/MusicDownloader)](https://goreportcard.com/report/github.com/henson/MusicDownloader)
-[![GitHub release](https://img.shields.io/github/release/henson/MusicDownloader.svg)](https://github.com/henson/MusicDownloader/releases/tag/v1.0)
+[![Travis Status for henson/MusicDownloader](https://travis-ci.org/henson/MusicDownloader.svg?branch=master)](https://travis-ci.org/henson/MusicDownloader) [![Go Report Card](https://goreportcard.com/badge/github.com/henson/MusicDownloader)](https://goreportcard.com/report/github.com/henson/MusicDownloader) [![GitHub release](https://img.shields.io/github/release/henson/MusicDownloader.svg)](https://github.com/henson/MusicDownloader/releases/tag/v1.0)
 
 # MusicDownloader 
 

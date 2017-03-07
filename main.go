@@ -31,7 +31,7 @@ func main() {
 	var URL string
 	fmt.Print("Enter url:")
 	fmt.Scanf("%s", &URL)
-	log.Println("Working, pls waiting ...")
+	log.Println("Working, pls wait ...")
 
 	downChan := make(chan Item, chanBufferSize)
 	okChan := make(chan int, chanBufferSize)

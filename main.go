@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"math"
 	"math/rand"
 	"net/http"
 	"net/url"
@@ -653,11 +652,5 @@ func clearSymbol(in string) (out string) {
 
 // iton parse the int to NO. with zero
 func iton(no, all int) string {
-	var temp string
-	for index := 1; index < 4; index++ {
-		if int(float64(all)/math.Pow10(index)) > 0 {
-			temp = "%0" + strconv.Itoa(index+1) + "d"
-		}
-	}
-	return fmt.Sprintf(temp, no+1)
+	return fmt.Sprintf("%0"+strconv.Itoa(len(strconv.Itoa(all)))+"d", no+1)
 }

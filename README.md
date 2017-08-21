@@ -1,5 +1,9 @@
 [![Travis Status for henson/MusicDownloader](https://travis-ci.org/henson/MusicDownloader.svg?branch=master)](https://travis-ci.org/henson/MusicDownloader) [![Go Report Card](https://goreportcard.com/badge/github.com/henson/MusicDownloader)](https://goreportcard.com/report/github.com/henson/MusicDownloader) [![GitHub release](https://img.shields.io/github/release/henson/MusicDownloader.svg)](https://github.com/henson/MusicDownloader/releases/tag/v1.0)
 
+# IMPORTANT
+
+网易云音乐的API已改，2017年后入库的音乐不能被本程序解析下载！！！
+
 # MusicDownloader 
 
 It is a tool to download the music files such as .mp3 from netease cloud.
